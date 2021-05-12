@@ -9,7 +9,7 @@ USER root
 # RUN echo 'deb http://cz.archive.ubuntu.com/ubuntu lucid main universe ' > /etc/apt/source.list
 # RUN apt-get install unixodbc
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-RUN curl https://packages.microsoft.com/config/debian/10/prod.list > /etc/apt/sources.list.d/mssql-release.list
+RUN https://packages.microsoft.com/config/ubuntu/16.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
 RUN apt-get update
 RUN ACCEPT_EULA=Y apt-get install msodbcsql=13.0.1.0-1 mssql-tools=14.0.2.0-1
 RUN . ~/.bashrc
